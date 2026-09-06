@@ -1,0 +1,22 @@
+{
+  "name": "todo_api_node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+  "start": "node app.js",
+  "dev": "nodemon app.js"
+}
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sumailasherif/TODO_API_Node.js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/sumailasherif/TODO_API_Node.js/issues"
+  },
+  "homepage": "https://github.com/sumailasherif/TODO_API_Node.js#readme"
+}
