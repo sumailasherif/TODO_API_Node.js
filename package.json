@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-  "start": "node app.js",
-  "dev": "nodemon app.js"
-},
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sumailasherif/TODO_API_Node.js.git"
@@ -18,5 +18,13 @@
   "bugs": {
     "url": "https://github.com/sumailasherif/TODO_API_Node.js/issues"
   },
-  "homepage": "https://github.com/sumailasherif/TODO_API_Node.js#readme"
+  "homepage": "https://github.com/sumailasherif/TODO_API_Node.js#readme",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "mysql2": "^3.24.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
 }
