@@ -42,3 +42,37 @@ async function getTaskById(req, res) {
     res.status(500).json({ error: 'Internal server error' });// returning a server error for any unexpected issues
   }
 }
+async function updateTask(req, res) {
+  try {
+    const { title, is_completed } = req.body;
+    const updated = await taskModel.updateTask(req.params.id, {
+      title,
+      is_completed
+    });
+
+    if (!updated) {
+      return res.status(404).json({ error: 'There is no task at that id' });
+    }
+    res.status(204).send();
+  } catch (err) {
+    res.status(500).json({ error: 'Internal server error' });
+  }
+}
+
+//deleting an id that doesn't exist should still return 204, not 404.
+async function deleteTask(req, res) {
+  try {
+    await taskModel.deleteTask(req.params.id);
+    res.status(204).send();
+  } catch (err) {
+    res.status(500).json({ error: 'Internal server error' });
+  }
+}
+
+module.exports = {
+  createTask,
+  getAllTasks,
+  getTaskById,
+  updateTask,
+  deleteTask
+};

@@ -1,10 +1,10 @@
-<!--thisCreates the database used for the Task API -->
+--thisCreates the database used for the Task API --
 CREATE DATABASE IF NOT EXISTS task_api;
 
 
 USE task_api;
 
-<!-- Stores each task: id (auto-generated), title, and completion status -->
+-- Stores each task: id (auto-generated), title, and completion status --
 CREATE TABLE IF NOT EXISTS tasks (
   id INT AUTO_INCREMENT PRIMARY KEY,              
   title VARCHAR(255) NOT NULL,                    
