@@ -1,4 +1,4 @@
-<!--thisCreates the database used for the Task API assignment-->
+<!--thisCreates the database used for the Task API -->
 CREATE DATABASE IF NOT EXISTS task_api;
 
 
