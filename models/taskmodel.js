@@ -32,3 +32,30 @@ async function getTaskById(id) {
   );
   return rows.length ? toTask(rows[0]) : null;
 }
+
+async function updateTask(id, { title, is_completed }) {
+  const existing = await getTaskById(id);
+  if (!existing) return false;
+
+  const newTitle = title !== undefined ? title : existing.title;
+  const newIsCompleted =
+    is_completed !== undefined ? is_completed : existing.is_completed;
+
+  await pool.query(
+    'UPDATE tasks SET title = ?, is_completed = ? WHERE id = ?',
+    [newTitle, newIsCompleted, id]
+  );
+  return true;
+}
+
+async function deleteTask(id) {
+  await pool.query('DELETE FROM tasks WHERE id = ?', [id]);
+}
+
+module.exports = {
+  createTask,
+  getAllTasks,
+  getTaskById,
+  updateTask,
+  deleteTask
+};
