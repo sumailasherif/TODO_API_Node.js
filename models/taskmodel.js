@@ -9,7 +9,7 @@ function toTask(row) {
   };
 }
 
-// I added parameterized queries (the ? placeholders) throughout this model
+// I added the ? placeholder throughout this model
 // instead of building SQL strings by hand. Here, we let mysql2 escape the
 // values for us. This is what prevents SQL injection from user input.
 async function createTask(title) {
@@ -51,6 +51,7 @@ async function updateTask(id, { title, is_completed }) {
 async function deleteTask(id) {
   await pool.query('DELETE FROM tasks WHERE id = ?', [id]);
 }
+
 
 module.exports = {
   createTask,
